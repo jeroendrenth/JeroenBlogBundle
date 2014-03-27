@@ -1,0 +1,12 @@
+{
+    "name": "jeroen_drenth/Blog",
+    "authors": [
+        {
+            "name": "Jeroen Drenth",
+            "email": "jeroen.drenth1@gmail.com"
+        }
+    ],
+    "require": {
+
+    }
+}

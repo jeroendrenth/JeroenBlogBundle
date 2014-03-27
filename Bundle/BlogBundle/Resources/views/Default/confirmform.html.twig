@@ -1,0 +1,10 @@
+
+{% extends 'JeroenBlogBundle:Default:base.html.twig' %}
+
+{% block body %}
+	<div class="container">
+		{% set menu = knp_menu_get('JeroenBlogBundle:Builder:blogTabs', [], {'id': id} ) %}
+		{{ knp_menu_render(menu, {'currentAsLink': true, 'currentClass': 'active', 'compressed': true}) }}
+	</div>
+	{{ form(form) }}
+{% endblock %}

@@ -1,0 +1,24 @@
+{% extends 'JeroenBlogBundle:Default:base.html.twig' %}
+
+{% block body %}
+	<div class="blog-header">
+        <h1 class="blog-title">Jeroen's Blog</h1>
+        <p class="lead blog-description">Mijn eerste Symfony bundle!</p>
+     </div>
+    <div class="row">
+		<div class="col-sm-8 blog-main">
+			   
+			{% if logged_in %}
+	    		<a href="/blog/add">Create new blog</a>
+	    	{% endif %}
+			{% for blog in blogs %}
+			<div class="blog-post">
+	            <h2 class="blog-post-title"><a href="blog/{{ blog.id }}">{{ blog.title }}</a></h2>
+	            <p class="blog-post-meta">{{ blog.creationDate|date("H:i | d F Y") }} | <a href="#">{{ user.username }}</a></p>
+				{{ blog.body|raw }}
+	         </div>
+	         {% endfor %}
+		</div>
+	</div>
+	<div class="col-sm-3 col-sm-offset-1 blog-sidebar"></div>
+{% endblock %}

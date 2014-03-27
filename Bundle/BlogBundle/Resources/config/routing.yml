@@ -1,0 +1,38 @@
+jeroen_blog_homepage:
+    pattern:  /blog
+    defaults: { _controller: JeroenBlogBundle:Default:index }
+
+jeroen_blog_add:
+    pattern:  /blog/add
+    defaults: { _controller: JeroenBlogBundle:Default:add }
+
+jeroen_blog_view:
+    pattern:  /blog/{id}
+    defaults: { _controller: JeroenBlogBundle:Default:view }
+
+jeroen_blog_edit:
+    pattern:  /blog/{id}/edit
+    defaults: { _controller: JeroenBlogBundle:Default:edit }
+
+jeroen_blog_delete:
+    pattern:  /blog/{id}/delete
+    defaults: { _controller: JeroenBlogBundle:Default:delete }
+
+fos_user_security:
+    resource: "@FOSUserBundle/Resources/config/routing/security.xml"
+
+fos_user_profile:
+    resource: "@FOSUserBundle/Resources/config/routing/profile.xml"
+    prefix: /profile
+
+fos_user_register:
+    resource: "@FOSUserBundle/Resources/config/routing/registration.xml"
+    prefix: /register
+
+fos_user_resetting:
+    resource: "@FOSUserBundle/Resources/config/routing/resetting.xml"
+    prefix: /resetting
+
+fos_user_change_password:
+    resource: "@FOSUserBundle/Resources/config/routing/change_password.xml"
+    prefix: /profile

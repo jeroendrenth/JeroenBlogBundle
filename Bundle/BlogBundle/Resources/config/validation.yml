@@ -1,0 +1,6 @@
+Jeroen\Bundle\BlogBundle\Entity\Blog:
+    properties:
+        title:
+            - NotBlank: ~
+        body:
+            - NotBlank: ~
