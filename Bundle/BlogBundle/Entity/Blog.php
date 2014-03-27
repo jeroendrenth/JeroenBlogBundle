@@ -42,6 +42,13 @@ class Blog
      */
     private $creationDate;
 
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="uid", type="integer")
+     */
+    private $uid;
+
 
     /**
      * Get id
@@ -123,6 +130,30 @@ class Blog
     public function getCreationDate()
     {
         return $this->creationDate;
+    }
+
+    /**
+     * Set uid
+     *
+     * @param integer $uid
+     *
+     * @return Blog
+     */
+    public function setUid($uid)
+    {
+        $this->uid = $uid;
+
+        return $this;
+    }
+
+    /**
+     * Get uid
+     *
+     * @return integer
+     */
+    public function getUid()
+    {
+        return $this->uid;
     }
 }
 
