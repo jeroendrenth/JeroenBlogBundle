@@ -7,14 +7,13 @@
      </div>
     <div class="row">
 		<div class="col-sm-8 blog-main">
-			   
-			{% if logged_in %}
+			{% if app.user %}
 	    		<a href="/blog/add">Create new blog</a>
 	    	{% endif %}
 			{% for blog in blogs %}
 			<div class="blog-post">
 	            <h2 class="blog-post-title"><a href="blog/{{ blog.id }}">{{ blog.title }}</a></h2>
-	            <p class="blog-post-meta">{{ blog.creationDate|date("H:i | d F Y") }} | <a href="#">{{ user.username }}</a></p>
+	            <p class="blog-post-meta">{{ blog.creationDate|date("H:i | d F Y") }} | <a href="#">Author</a></p>
 				{{ blog.body|raw }}
 	         </div>
 	         {% endfor %}

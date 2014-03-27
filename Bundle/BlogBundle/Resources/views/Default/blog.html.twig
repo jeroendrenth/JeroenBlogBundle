@@ -1,14 +1,16 @@
 {% extends 'JeroenBlogBundle:Default:base.html.twig' %}
 
 {% block body %}
+	{% if app.user %}
 	<div class="container">
 		{% set menu = knp_menu_get('JeroenBlogBundle:Builder:blogTabs', [], {'id': blog.id} ) %}
 		{{ knp_menu_render(menu, {'currentAsLink': true, 'currentClass': 'active', 'compressed': true}) }}
 	</div>
+	{% endif %}
 	<div class="col-sm-8 blog-main">
 		<div class="blog-post">
             <h2 class="blog-post-title">{{ blog.title }}</h2>
-            <p class="blog-post-meta">{{ blog.creationDate|date("H:i | d F Y") }} | <a href="#">{{ user.username }}</a></p>
+            <p class="blog-post-meta">{{ blog.creationDate|date("H:i | d F Y") }} | <a href="#">Author</a></p>
 			{{ blog.body|raw }}
           </div>
 	</div>
