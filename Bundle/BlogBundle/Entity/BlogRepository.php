@@ -12,4 +12,13 @@ use Doctrine\ORM\EntityRepository;
  */
 class BlogRepository extends EntityRepository
 {
+	public function loadList()
+    {
+        $q = $this
+            ->createQueryBuilder('b')
+            ->orderBy('b.creationDate', 'DESC')
+            ->getQuery();
+       
+       	return $q->getResult();
+    }
 }
